@@ -18,10 +18,14 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm ci
+          npm install @next/swc-linux-x64-gnu @next/swc-linux-x64-musl
 
       - name: Build
         run: npm run build
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
