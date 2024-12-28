@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from "@/components/ui/button"
+import Image from 'next/image'
 
 const logos = [
   { src: "/placeholder.svg", alt: "Company 1" },
@@ -44,9 +45,11 @@ export default function LogoCarousel() {
             const logoIndex = (currentIndex + i) % logos.length
             return (
               <div key={i} className="w-32 h-32 flex items-center justify-center">
-                <img
+                <Image
                   src={logos[logoIndex].src}
                   alt={logos[logoIndex].alt}
+                  width={128}
+                  height={128}
                   className="max-w-full max-h-full object-contain"
                 />
               </div>
