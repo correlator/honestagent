@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { Button } from "@/components/ui/button"
 import { Menu, X } from 'lucide-react'
-import { smoothScroll } from '../utils/smoothScroll'
+import { smoothScroll } from '@/app/utils/smoothScroll'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
